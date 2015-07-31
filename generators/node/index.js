@@ -77,8 +77,6 @@ module.exports = yeoman.generators.Base.extend({
       var cp = copy.bind(this);
 
       cp('editorconfig', '.editorconfig');
-      cp('gitattributes', '.gitattributes');
-      cp('gitignore', '.gitignore');
       cp('eslintrc', '.eslintrc');
       cp('eslintignore', '.eslintignore');
       cp('travis.yml', '.travis.yml');
@@ -96,6 +94,13 @@ module.exports = yeoman.generators.Base.extend({
 
     readme: function() {
       copy.call(this, 'README.md');
+    },
+
+    git: function() {
+      var path = require('path');
+      this.composeWith('node:git', {}, {
+        local: path.join(__dirname, '..', '..', 'node_modules', 'generator-node', 'generators', 'git')
+      });
     }
   },
 

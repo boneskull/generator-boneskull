@@ -18,6 +18,7 @@ describe('boneskull:node', function() {
           email: 'president@whitehouse.gov',
           cli: false
         })
+        .withGenerators([[helpers.createDummyGenerator(), 'node:git']])
         .on('end', done);
     });
 
@@ -25,8 +26,6 @@ describe('boneskull:node', function() {
 
       var expected = [
         '.editorconfig',
-        '.gitattributes',
-        '.gitignore',
         '.eslintrc',
         '.eslintignore',
         '.travis.yml',
