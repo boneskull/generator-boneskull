@@ -6,17 +6,19 @@ var camelCase = require('lodash.camelcase');
 var superb = require('superb');
 var normalizeUrl = require('normalize-url');
 var humanizeUrl = require('humanize-url');
+var slug = require('slug');
 
-var copy = function copy(src, dest) {
+function copy(src, dest) {
   dest = dest || src;
   this.fs.copyTpl(this.templatePath(src),
     this.destinationPath(dest),
     this.props);
-};
+}
 
 module.exports = generators.Base.extend({
   prompting: function() {
     var done = this.async();
+    var prompts;
 
     // Have Yeoman greet the user.
     this.log(yosay(
@@ -24,22 +26,20 @@ module.exports = generators.Base.extend({
       ' generator!'
     ));
 
-    var prompts = [
+    prompts = [
       {
         name: 'moduleName',
         message: 'What do you want to name your module?',
-        default: this.appname.replace(/\s/g, '-'),
+        'default': this.appname.replace(/\s/g, '-'),
         filter: function(val) {
-          return _s.slugify(val);
+          return slug(val);
         }
-      },
-      {
+      }, {
         name: 'description',
         message: 'Please describe this module.',
-        default: 'A ' + superb() + ' module',
+        'default': 'A ' + superb() + ' module',
         store: true
-      },
-      {
+      }, {
         name: 'website',
         message: 'What is the URL of your website?',
         store: true,
@@ -53,7 +53,7 @@ module.exports = generators.Base.extend({
         name: 'cli',
         message: 'Do you need a CLI?',
         type: 'confirm',
-        default: false
+        'default': false
       }
     ];
 
@@ -99,7 +99,13 @@ module.exports = generators.Base.extend({
     git: function() {
       var path = require('path');
       this.composeWith('node:git', {}, {
-        local: path.join(__dirname, '..', '..', 'node_modules', 'generator-node', 'generators', 'git')
+        local: path.join(__dirname,
+          '..',
+          '..',
+          'node_modules',
+          'generator-node',
+          'generators',
+          'git')
       });
     }
   },
