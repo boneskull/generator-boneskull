@@ -4,6 +4,7 @@ var chalk = require('chalk');
 var yosay = require('yosay');
 var camelCase = require('lodash.camelcase');
 var superb = require('superb');
+var normalizeUrl = require('normalize-url');
 var humanizeUrl = require('humanize-url');
 
 var copy = function copy(src, dest) {

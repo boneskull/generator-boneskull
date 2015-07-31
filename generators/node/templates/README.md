@@ -16,4 +16,4 @@ var <%= moduleName %> = require('<%= moduleName %>');
 
 ## License
 
-© <%= year %> [<%= name %>](<%= humanizedWebsite %>).  Licensed MIT.
+© <%= year %> [<%= name %>](<%= website %>).  Licensed MIT.
