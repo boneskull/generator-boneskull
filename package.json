@@ -16,9 +16,8 @@
     "test": "mocha"
   },
   "files": [
-    "node"
+    "generators"
   ],
-  "main": "lib/index.js",
   "keywords": [
     "yeoman-generator",
     "plugin",
