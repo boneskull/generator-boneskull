@@ -62,12 +62,10 @@ module.exports = generators.Base.extend({
       props.camelModuleName = camelCase(props.moduleName);
       props.name = this.user.git.name();
       props.email = this.user.git.email();
-      props.githubUsername = this.user.github.username();
       props.humanizedWebsite = humanizeUrl(props.website);
       props.year = new Date().getFullYear();
-      props.superb = superb();
+      props.githubUsername = this.user.github.username(done);
 
-      done();
     }.bind(this));
   },
 
@@ -132,6 +130,8 @@ module.exports = generators.Base.extend({
   },
 
   install: function() {
-    this.installDependencies();
+    this.installDependencies({
+      bower: false
+    });
   }
 });

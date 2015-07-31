@@ -15,7 +15,7 @@ $ npm install -g generator-boneskull
 With [yo](https://github.com/yeoman/yo):
 
 ```
-$ yo boneskull
+$ yo boneskull:node
 ```
 
 ## License
