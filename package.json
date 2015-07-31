@@ -15,6 +15,9 @@
   "scripts": {
     "test": "mocha"
   },
+  "files": [
+    "node"
+  ],
   "main": "lib/index.js",
   "keywords": [
     "yeoman-generator",
