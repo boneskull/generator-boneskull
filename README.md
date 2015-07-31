@@ -20,5 +20,5 @@ $ yo boneskull
 
 ## License
 
-© 2015 [Christopher Hiller](http://boneskull.com).  Licensed MIT.
+© 2015 [Christopher Hiller](http://boneskull.com).  Licensed MIT.  
 Portions © [Sindre Sorhus](http://sindresorhus.com)
