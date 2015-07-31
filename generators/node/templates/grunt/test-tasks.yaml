@@ -1,0 +1,8 @@
+mocha_istanbul: test
+
+eslint:
+<% if (cli) { %>
+  - bin/**/*.js
+<% } %>
+  - lib/**/*.js
+  - test/**/*.js
