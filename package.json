@@ -1,6 +1,6 @@
 {
   "name": "generator-boneskull",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Scaffold out an npm module, boneskull stylie",
   "license": "MIT",
   "repository": "boneskull/generator-boneskull",
