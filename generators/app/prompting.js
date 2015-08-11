@@ -60,7 +60,13 @@ module.exports = {
       props.email = this.user.git.email();
       props.humanizedWebsite = humanizeUrl(props.website);
       props.year = new Date().getFullYear();
-      props.githubUsername = this.user.github.username(done);
+      this.user.github.username(function(err, username) {
+        if (err) {
+          return done(err);
+        }
+        props.githubUsername = username;
+        done();
+      });
     }.bind(this));
 
   },
