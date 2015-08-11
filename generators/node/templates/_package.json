@@ -16,7 +16,7 @@
   <% } %>
   "main": "lib/index.js",
   "engines": {
-  <% if (es6) %>
+  <% if (es6) { %>
     "node": ">=2.0.1"
   <% } else { %>
     "node": ">=0.10.0"
