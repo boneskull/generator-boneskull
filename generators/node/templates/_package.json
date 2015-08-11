@@ -14,6 +14,7 @@
     "<%= moduleName %>": "bin/<%= moduleName %>.js"
   },
   <% } %>
+  "main": "lib/index.js",
   "engines": {
     "node": ">=0.10.0"
   },
