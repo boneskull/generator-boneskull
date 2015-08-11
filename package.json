@@ -13,10 +13,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "mocha",
-    "tmp": "node scripts/make-tmp.js",
-    "clean": "node scripts/clean-tmp.js",
-    "generate": "npm run clean && npm run tmp && cd tmp && yo boneskull"
+    "test": "mocha"
   },
   "files": [
     "node",
