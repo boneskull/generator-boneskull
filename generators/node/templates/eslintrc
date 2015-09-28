@@ -2,6 +2,7 @@ env:
   node: true
 <% if (es6) { %>
   es6: true
+parser: babel-eslint
 <% } %>
 rules:
   # errors
@@ -167,8 +168,8 @@ rules:
   lines-around-comment:
     - 2
     -
-      beforeBlockComment: true
-      beforeLineComment: true
+      beforeBlockComment: false
+      beforeLineComment: false
   linebreak-style:
     - 2
     - unix
@@ -246,6 +247,3 @@ rules:
     - 4
   no-bitwise: 1
   no-plusplus: 0
-
-globals:
-  Promise: true
