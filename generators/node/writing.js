@@ -16,7 +16,11 @@ module.exports = {
     var props = this.props;
 
     this._copy('_package.json', 'package.json');
-    this._copy('lib/index.js');
+    if (props.es6) {
+      this._copy('main/index.js', 'src/index.js');
+    } else {
+      this._copy('main/index.js', 'lib/index.js');
+    }
     if (props.cli) {
       this._copy('bin/cli.js', 'bin/' + props.moduleName + '.js');
     }

@@ -14,7 +14,11 @@
     "<%= moduleName %>": "bin/<%= moduleName %>.js"
   },
   <% } %>
+  <% if (es6) { %>
+  "main": "dist/index.js",
+  <% } else { %>
   "main": "lib/index.js",
+  <% } %>
   "engines": {
   <% if (es6) { %>
     "node": ">=2.0.1"
